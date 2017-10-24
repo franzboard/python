@@ -87,7 +87,7 @@ def main():
                 blinkShort()
 
         except KeyboardInterrupt:
-            GPIO.cleanup([LED1, LED2, LED3, LED4])
+            GPIO.cleanup([LED1, LED2, LED3, LED4, BUT1, BUT2, BUT3])
             sys.exit()
 
 
