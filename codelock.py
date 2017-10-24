@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
+#
 # Code lock for Raspberry Pi & Franzboard
-# 
+# Edgar Neukirchner 2017
+#
 import RPi.GPIO as GPIO
 import sys
 import time
