@@ -80,7 +80,7 @@ def main():
                     timeout -= 1
                 else:
                     passed = FALSE
-                    timeout = 5 
+                    timeout = 10 
                     keys.clear() 
                     print('Timeout expired')
             else:
