@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+# adapted to franzboard, originally from www.penguintutor.com
+#
 import pgzrun
 from gpiozero import Button, LED
 import random
