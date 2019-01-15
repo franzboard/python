@@ -5,8 +5,8 @@ import pgzrun
 from gpiozero import Button, LED
 import random
 
-WIDTH = 1200
-HEIGHT = 1000
+WIDTH = 1000
+HEIGHT = 800
 PIN_LEFT = 22
 PIN_MISSILE = 27
 PIN_RIGHT = 17
