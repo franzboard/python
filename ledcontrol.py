@@ -4,7 +4,7 @@
 from gpiozero import LED
 import paho.mqtt.client as mqtt
 
-leds = (LED(18), LED(23), LED(24), LED(25))
+leds = (LED(18), LED(23), LED(24), LED(25)) # BCM pin numbers
 led_status = [0, 0, 0, 0]
 
 def on_connect(client, userdata, flags, rc):
@@ -12,8 +12,9 @@ def on_connect(client, userdata, flags, rc):
     client.subscribe("bulme/iot-test")
 
 def on_message(client, userdata, msg):
+    #payload is b1, b2, b3 or b4 - extract number only
     index = int(str(msg.payload, 'utf-8')[-1]) - 1
-    led_status[index] = 1 - led_status[index]
+    led_status[index] = 1 - led_status[index] # toggle status 1/0
     if led_status[index] == 1:
         leds[index].on()
     else:
@@ -24,5 +25,4 @@ client.on_connect = on_connect
 client.on_message = on_message
 
 client.connect("iotlab.bulme.at", 1883, 60)
-
 client.loop_forever()
